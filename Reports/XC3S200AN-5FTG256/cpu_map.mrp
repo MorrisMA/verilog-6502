@@ -1,0 +1,265 @@
+Release 10.1.03 Map K.39 (nt)
+Xilinx Mapping Report File for Design 'cpu'
+
+Design Information
+------------------
+Command Line   : map -ise C:/XProjects/ISE10.1i/A6502/A6502.ise -intstyle ise -p
+xc3s200an-ftg256-5 -timing -logic_opt on -ol high -xe c -t 1
+-register_duplication -cm balanced -detail -ignore_keep_hierarchy -pr b -k 4
+-power off -o cpu_map.ncd cpu.ngd cpu.pcf 
+Target Device  : xc3s200an
+Target Package : ftg256
+Target Speed   : -5
+Mapper Version : spartan3a -- $Revision: 1.46.12.2 $
+Mapped Date    : Tue May 01 21:22:45 2012
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    1
+Logic Utilization:
+  Number of Slice Flip Flops:           169 out of   3,584    4%
+  Number of 4 input LUTs:               513 out of   3,584   14%
+Logic Distribution:
+  Number of occupied Slices:            332 out of   1,792   18%
+    Number of Slices containing only related logic:     332 out of     332 100%
+    Number of Slices containing unrelated logic:          0 out of     332   0%
+      *See NOTES below for an explanation of the effects of unrelated logic.
+  Total Number of 4 input LUTs:         514 out of   3,584   14%
+    Number used as logic:               505
+    Number used as a route-thru:          1
+    Number used as 16x1 RAMs:             8
+  Number of bonded IOBs:                 38 out of     195   19%
+    IOB Flip Flops:                      10
+  Number of BUFGMUXs:                     1 out of      24    4%
+
+Peak Memory Usage:  203 MB
+Total REAL time to MAP completion:  15 secs 
+Total CPU time to MAP completion:   15 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Modular Design Summary
+Section 11 - Timing Report
+Section 12 - Configuration String Information
+Section 13 - Control Set Information
+Section 14 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:Pack:266 - The function generator CI87 failed to merge with F5
+   multiplexer ALU/logic<7>73.  There is a conflict for the FXMUX.  The design
+   will exhibit suboptimal timing.
+
+Section 3 - Informational
+-------------------------
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 1.140 Volts. (default - Range: 1.140 to
+   1.260 Volts)
+INFO:Pack:1650 - Map created a placed design.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+   2 block(s) optimized away
+  56 Block(s) redundant
+
+Section 5 - Removed Logic
+-------------------------
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+
+Redundant Block(s):
+TYPE 		BLOCK
+LOCALBUF 		state_cmp_eq000011/LUT4_D_BUF
+LOCALBUF 		state_FSM_FFd33-In511/LUT4_D_BUF
+LOCALBUF 		state_FSM_FFd33-In119/LUT4_D_BUF
+LOCALBUF 		IR_or00001/LUT3_D_BUF
+LOCALBUF 		AI<3>6/LUT4_L_BUF
+LOCALBUF 		AI<1>6/LUT4_D_BUF
+LOCALBUF 		AI<0>6/LUT4_L_BUF
+LOCALBUF 		ALU/CO_or0000_SW0/LUT2_L_BUF
+LOCALBUF 		ALU/temp_HC_SW0/LUT2_L_BUF
+LOCALBUF 		regsel<1>_SW2/LUT2_L_BUF
+LOCALBUF 		ALU/logic<2>_SW0/LUT4_L_BUF
+LOCALBUF 		state_FSM_FFd39-In_SW0/LUT3_L_BUF
+LOCALBUF 		state_FSM_FFd34-In_SW0/LUT3_L_BUF
+LOCALBUF 		state_cmp_eq001811/LUT4_D_BUF
+LOCALBUF 		AB_or00061/LUT3_D_BUF
+LOCALBUF 		AB_or00011/LUT3_D_BUF
+LOCALBUF 		AB_or0000_SW0/LUT4_L_BUF
+LOCALBUF 		clc_cmp_eq000021/LUT3_D_BUF
+LOCALBUF 		AB<7>16/LUT4_L_BUF
+LOCALBUF 		AB<6>16/LUT4_L_BUF
+LOCALBUF 		AB<5>16/LUT4_L_BUF
+LOCALBUF 		AB<4>16/LUT4_L_BUF
+LOCALBUF 		AB<3>16/LUT4_L_BUF
+LOCALBUF 		AB<2>16/LUT4_L_BUF
+LOCALBUF 		AB<1>16/LUT4_L_BUF
+LOCALBUF 		AB<0>13/LUT2_L_BUF
+LOCALBUF 		op_or0001_SW0/LUT2_L_BUF
+LOCALBUF 		op_mux0000<2>_SW0/LUT3_L_BUF
+LOCALBUF 		load_reg_or000031/LUT2_D_BUF
+LOCALBUF 		dst_reg_mux0000<1>_SW0/LUT4_L_BUF
+LOCALBUF 		state_FSM_FFd48-In121/LUT2_D_BUF
+LOCALBUF 		src_reg_mux0000<1>31/LUT2_D_BUF
+LOCALBUF 		op_or000011/LUT2_D_BUF
+LOCALBUF 		op_or000080/LUT2_D_BUF
+LOCALBUF 		PC_inc21/LUT4_D_BUF
+LOCALBUF 		PC_temp_or0000/LUT4_D_BUF
+LOCALBUF 		PC_temp<0>4/LUT4_L_BUF
+LOCALBUF 		CI64/LUT4_L_BUF
+LOCALBUF 		AI<7>6/LUT4_L_BUF
+LOCALBUF 		AI<6>6/LUT4_L_BUF
+LOCALBUF 		AI<5>6/LUT4_L_BUF
+LOCALBUF 		AI<4>8/LUT2_D_BUF
+LOCALBUF 		ALU/logic<6>_SW0/LUT4_L_BUF
+LOCALBUF 		ALU/logic<5>_SW0/LUT4_L_BUF
+LOCALBUF 		ALU/logic<4>_SW0/LUT4_L_BUF
+LOCALBUF 		regsel_or00014/LUT4_L_BUF
+LOCALBUF 		BI_or0001_SW0/LUT3_L_BUF
+LOCALBUF 		PC_inc18/LUT4_D_BUF
+LOCALBUF 		state_FSM_FFd48-In9/LUT4_L_BUF
+LOCALBUF 		dst_reg_or0002226/LUT4_D_BUF
+LOCALBUF 		op_or000049/LUT4_L_BUF
+LOCALBUF 		state_FSM_FFd41-In_SW1/LUT4_L_BUF
+LOCALBUF 		PC_temp<2>33/LUT4_D_BUF
+LOCALBUF 		AB_or000711_SW1/LUT4_D_BUF
+LOCALBUF 		PC_temp<2>15_SW0/LUT4_L_BUF
+INV 		adc_sbc_inv1_INV_0
+
+Section 6 - IOB Properties
+--------------------------
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Drive    | Slew    | Reg (s)      | Resistor | IBUF/IFD | SUSPEND          |
+|                                    |                  |           |                      | Strength | Rate    |              |          | Delay    |                  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AB<0>                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| AB<1>                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| AB<2>                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| AB<3>                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| AB<4>                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| AB<5>                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| AB<6>                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| AB<7>                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| AB<8>                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| AB<9>                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| AB<10>                             | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| AB<11>                             | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| AB<12>                             | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| AB<13>                             | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| AB<14>                             | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| AB<15>                             | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| DI<0>                              | IBUF             | INPUT     | LVCMOS25             |          |         | IFF1         |          | 0 / 5    |                  |
+| DI<1>                              | IBUF             | INPUT     | LVCMOS25             |          |         | IFF1         |          | 0 / 5    |                  |
+| DI<2>                              | IBUF             | INPUT     | LVCMOS25             |          |         | IFF1         |          | 0 / 5    |                  |
+| DI<3>                              | IBUF             | INPUT     | LVCMOS25             |          |         | IFF1         |          | 0 / 5    |                  |
+| DI<4>                              | IBUF             | INPUT     | LVCMOS25             |          |         | IFF1         |          | 0 / 5    |                  |
+| DI<5>                              | IBUF             | INPUT     | LVCMOS25             |          |         | IFF1         |          | 0 / 5    |                  |
+| DI<6>                              | IBUF             | INPUT     | LVCMOS25             |          |         | IFF1         |          | 0 / 5    |                  |
+| DI<7>                              | IBUF             | INPUT     | LVCMOS25             |          |         | IFF1         |          | 0 / 5    |                  |
+| DO<0>                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| DO<1>                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| DO<2>                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| DO<3>                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| DO<4>                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| DO<5>                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| DO<6>                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| DO<7>                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| IRQ                                | IBUF             | INPUT     | LVCMOS25             |          |         |              |          | 0 / 0    |                  |
+| NMI                                | IBUF             | INPUT     | LVCMOS25             |          |         | IFF1         |          | 0 / 5    |                  |
+| RDY                                | IBUF             | INPUT     | LVCMOS25             |          |         | IFF1         |          | 0 / 5    |                  |
+| WE                                 | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| clk                                | IBUF             | INPUT     | LVCMOS25             |          |         |              |          | 0 / 0    |                  |
+| reset                              | IBUF             | INPUT     | LVCMOS25             |          |         |              |          | 0 / 0    |                  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Modular Design Summary
+-----------------------------------
+Modular Design not used for this design.
+
+Section 11 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Development System Reference Guide "TRACE" chapter.
+
+Section 12 - Configuration String Details
+-----------------------------------------
+BUFGMUX "clk_BUFGP/BUFG":
+DISABLE_ATTR:LOW
+
+
+
+
+Section 13 - Control Set Information
+------------------------------------
+No control set information for this architecture.
+
+Section 14 - Utilization by Hierarchy
+-------------------------------------
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Module             | Partition | Slices        | Slice Reg     | LUTs          | LUTRAM        | BRAM      | MULT18X18 | BUFG  | DCM   | Full Hierarchical  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| cpu/               |           | 316/338       | 155/169       | 481/514       | 8/8           | 0/0       | 0/0       | 1/1   | 0/0   | cpu                |
+| +ALU               |           | 22/22         | 14/14         | 33/33         | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | cpu/ALU            |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+* Slices can be packed with basic elements from multiple hierarchies.
+  Therefore, a slice will be counted in every hierarchical module
+  that each of its packed basic elements belong to.
+** For each column, there are two numbers reported <A>/<B>.
+   <A> is the number of elements that belong to that specific hierarchical module.
+   <B> is the total number of elements from that hierarchical module and any lower level
+   hierarchical modules below.
+*** The LUTRAM column counts all LUTs used as memory including RAM, ROM, and shift registers.

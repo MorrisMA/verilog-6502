@@ -1,0 +1,815 @@
+Release 10.1.03 - xst K.39 (nt)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/XProjects/ISE10.1i/A6502/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.19 secs
+ 
+--> Parameter xsthdpdir set to C:/XProjects/ISE10.1i/A6502/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.19 secs
+ 
+--> Reading design: cpu.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+     9.1) Device utilization summary
+     9.2) Partition Resource Summary
+     9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "cpu.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "cpu"
+Output Format                      : NGC
+Target Device                      : xc2s200-5-pq208
+
+---- Source Options
+Top Module Name                    : cpu
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : NO
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : lut
+Automatic Register Balancing       : Yes
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100
+Add Generic Clock Buffer(BUFG)     : 4
+Register Duplication               : YES
+Move First FlipFlop Stage          : YES
+Move Last FlipFlop Stage           : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Convert Tristates To Logic         : Yes
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : true
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 2
+Library Search Order               : cpu.lso
+Keep Hierarchy                     : NO
+Netlist Hierarchy                  : as_optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "/../../../Git-Repo/verilog-6502/ALU.v" in library work
+Compiling verilog file "/../../../Git-Repo/verilog-6502/cpu.v" in library work
+Module <ALU> compiled
+Module <cpu> compiled
+No errors in compilation
+Analysis of file <"cpu.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <cpu> in library <work> with parameters.
+	ABS0 = "000000"
+	ABS1 = "000001"
+	ABSX0 = "000010"
+	ABSX1 = "000011"
+	ABSX2 = "000100"
+	BRA0 = "000101"
+	BRA1 = "000110"
+	BRA2 = "000111"
+	BRK0 = "001000"
+	BRK1 = "001001"
+	BRK2 = "001010"
+	BRK3 = "001011"
+	DECODE = "001100"
+	FETCH = "001101"
+	INDX0 = "001110"
+	INDX1 = "001111"
+	INDX2 = "010000"
+	INDX3 = "010001"
+	INDY0 = "010010"
+	INDY1 = "010011"
+	INDY2 = "010100"
+	INDY3 = "010101"
+	JMP0 = "010110"
+	JMP1 = "010111"
+	JMPI0 = "011000"
+	JMPI1 = "011001"
+	JSR0 = "011010"
+	JSR1 = "011011"
+	JSR2 = "011100"
+	JSR3 = "011101"
+	OP_A = "1111"
+	OP_ADD = "0011"
+	OP_AND = "1101"
+	OP_EOR = "1110"
+	OP_OR = "1100"
+	OP_ROL = "1011"
+	OP_SUB = "0111"
+	PULL0 = "011110"
+	PULL1 = "011111"
+	PULL2 = "100000"
+	PUSH0 = "100001"
+	PUSH1 = "100010"
+	READ = "100011"
+	REG = "100100"
+	RTI0 = "100101"
+	RTI1 = "100110"
+	RTI2 = "100111"
+	RTI3 = "101000"
+	RTI4 = "101001"
+	RTS0 = "101010"
+	RTS1 = "101011"
+	RTS2 = "101100"
+	RTS3 = "101101"
+	SEL_A = "00"
+	SEL_S = "01"
+	SEL_X = "10"
+	SEL_Y = "11"
+	STACKPAGE = "00000001"
+	WRITE = "101110"
+	ZEROPAGE = "00000000"
+	ZP0 = "101111"
+	ZPX0 = "110000"
+	ZPX1 = "110001"
+
+Analyzing hierarchy for module <ALU> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <cpu>.
+	ABS0 = 6'b000000
+	ABS1 = 6'b000001
+	ABSX0 = 6'b000010
+	ABSX1 = 6'b000011
+	ABSX2 = 6'b000100
+	BRA0 = 6'b000101
+	BRA1 = 6'b000110
+	BRA2 = 6'b000111
+	BRK0 = 6'b001000
+	BRK1 = 6'b001001
+	BRK2 = 6'b001010
+	BRK3 = 6'b001011
+	DECODE = 6'b001100
+	FETCH = 6'b001101
+	INDX0 = 6'b001110
+	INDX1 = 6'b001111
+	INDX2 = 6'b010000
+	INDX3 = 6'b010001
+	INDY0 = 6'b010010
+	INDY1 = 6'b010011
+	INDY2 = 6'b010100
+	INDY3 = 6'b010101
+	JMP0 = 6'b010110
+	JMP1 = 6'b010111
+	JMPI0 = 6'b011000
+	JMPI1 = 6'b011001
+	JSR0 = 6'b011010
+	JSR1 = 6'b011011
+	JSR2 = 6'b011100
+	JSR3 = 6'b011101
+	OP_A = 4'b1111
+	OP_ADD = 4'b0011
+	OP_AND = 4'b1101
+	OP_EOR = 4'b1110
+	OP_OR = 4'b1100
+	OP_ROL = 4'b1011
+	OP_SUB = 4'b0111
+	PULL0 = 6'b011110
+	PULL1 = 6'b011111
+	PULL2 = 6'b100000
+	PUSH0 = 6'b100001
+	PUSH1 = 6'b100010
+	READ = 6'b100011
+	REG = 6'b100100
+	RTI0 = 6'b100101
+	RTI1 = 6'b100110
+	RTI2 = 6'b100111
+	RTI3 = 6'b101000
+	RTI4 = 6'b101001
+	RTS0 = 6'b101010
+	RTS1 = 6'b101011
+	RTS2 = 6'b101100
+	RTS3 = 6'b101101
+	SEL_A = 2'b00
+	SEL_S = 2'b01
+	SEL_X = 2'b10
+	SEL_Y = 2'b11
+	STACKPAGE = 8'b00000001
+	WRITE = 6'b101110
+	ZEROPAGE = 8'b00000000
+	ZP0 = 6'b101111
+	ZPX0 = 6'b110000
+	ZPX1 = 6'b110001
+Module <cpu> is correct for synthesis.
+ 
+Analyzing module <ALU> in library <work>.
+Module <ALU> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <ALU>.
+    Related source file is "/../../../Git-Repo/verilog-6502/ALU.v".
+    Found 1-bit register for signal <CO>.
+    Found 1-bit register for signal <HC>.
+    Found 1-bit register for signal <N>.
+    Found 1-bit register for signal <V>.
+    Found 1-bit register for signal <Z>.
+    Found 8-bit register for signal <OUT>.
+    Found 3-bit comparator greatequal for signal <CO9$cmp_ge0000> created at line 80.
+    Found 3-bit comparator greatequal for signal <HC9$cmp_ge0000> created at line 77.
+    Found 8-bit xor2 for signal <logic$xor0000> created at line 57.
+    Found 8-bit 4-to-1 multiplexer for signal <temp_BI>.
+    Found 5-bit adder carry in for signal <temp_h>.
+    Found 4-bit adder carry in/out for signal <temp_l$addsub0000>.
+    Found 1-bit xor4 for signal <V$xor0000> created at line 99.
+    Summary:
+	inferred  13 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+	inferred   8 Multiplexer(s).
+	inferred   1 Xor(s).
+Unit <ALU> synthesized.
+
+
+Synthesizing Unit <cpu>.
+    Related source file is "/../../../Git-Repo/verilog-6502/cpu.v".
+WARNING:Xst:646 - Signal <brk> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <DIHOLD_valid> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 4x8-bit single-port RAM <Mram_AXYS> for signal <AXYS>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 50                                             |
+    | Transitions        | 85                                             |
+    | Inputs             | 29                                             |
+    | Outputs            | 53                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Clock enable       | RDY (positive)                                 |
+    | Reset              | reset (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 001000                                         |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit register for signal <ABH>.
+    Found 8-bit register for signal <ABL>.
+    Found 1-bit register for signal <adc_bcd>.
+    Found 1-bit register for signal <adc_sbc>.
+    Found 1-bit register for signal <adj_bcd>.
+    Found 4-bit adder for signal <AXYS$add0000> created at line 533.
+    Found 4-bit adder for signal <AXYS$add0001> created at line 533.
+    Found 1-bit register for signal <backwards>.
+    Found 1-bit register for signal <bit>.
+    Found 1-bit register for signal <C>.
+    Found 1-bit register for signal <clc>.
+    Found 1-bit register for signal <cld>.
+    Found 1-bit register for signal <cli>.
+    Found 1-bit register for signal <clv>.
+    Found 1-bit register for signal <compare>.
+    Found 3-bit register for signal <cond_code>.
+    Found 1-bit 8-to-1 multiplexer for signal <cond_true>.
+    Found 1-bit register for signal <D>.
+    Found 8-bit register for signal <DIHOLD>.
+    Found 2-bit register for signal <dst_reg>.
+    Found 1-bit register for signal <I>.
+    Found 1-bit register for signal <inc>.
+    Found 1-bit register for signal <index_y>.
+    Found 8-bit register for signal <IRHOLD>.
+    Found 1-bit register for signal <IRHOLD_valid>.
+    Found 1-bit register for signal <load_only>.
+    Found 1-bit register for signal <load_reg>.
+    Found 1-bit register for signal <N>.
+    Found 1-bit register for signal <NMI_1>.
+    Found 1-bit register for signal <NMI_edge>.
+    Found 4-bit register for signal <op>.
+    Found 16-bit register for signal <PC>.
+    Found 16-bit adder for signal <PC$add0000> created at line 351.
+    Found 1-bit register for signal <php>.
+    Found 1-bit register for signal <plp>.
+    Found 1-bit register for signal <RDY1>.
+    Found 1-bit register for signal <res>.
+    Found 1-bit register for signal <rotate>.
+    Found 1-bit register for signal <sec>.
+    Found 1-bit register for signal <sed>.
+    Found 1-bit register for signal <sei>.
+    Found 1-bit register for signal <shift>.
+    Found 1-bit register for signal <shift_right>.
+    Found 2-bit register for signal <src_reg>.
+    Found 1-bit xor2 for signal <state$xor0000> created at line 951.
+    Found 1-bit register for signal <store>.
+    Found 1-bit register for signal <V>.
+    Found 1-bit register for signal <write_back>.
+    Found 1-bit register for signal <Z>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 RAM(s).
+	inferred  94 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred   1 Multiplexer(s).
+Unit <cpu> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x8-bit single-port RAM                               : 1
+# Adders/Subtractors                                   : 5
+ 16-bit adder                                          : 1
+ 4-bit adder                                           : 2
+ 4-bit adder carry in/out                              : 1
+ 5-bit adder carry in                                  : 1
+# Registers                                            : 50
+ 1-bit register                                        : 40
+ 16-bit register                                       : 1
+ 2-bit register                                        : 2
+ 3-bit register                                        : 1
+ 4-bit register                                        : 1
+ 8-bit register                                        : 5
+# Comparators                                          : 2
+ 3-bit comparator greatequal                           : 2
+# Multiplexers                                         : 2
+ 1-bit 8-to-1 multiplexer                              : 1
+ 8-bit 4-to-1 multiplexer                              : 1
+# Xors                                                 : 3
+ 1-bit xor2                                            : 1
+ 1-bit xor4                                            : 1
+ 8-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <state/FSM> on signal <state[1:50]> with one-hot encoding.
+--------------------------------------------------------------
+ State  | Encoding
+--------------------------------------------------------------
+ 000000 | 00000000000000000000000000000000000000000000000100
+ 000001 | 00000000000000000000000000000100000000000000000000
+ 000010 | 00000000000000000000000000000000010000000000000000
+ 000011 | 00000000000000000000000000001000000000000000000000
+ 000100 | 00000000000000000000000000010000000000000000000000
+ 000101 | 00000000000000000000000000000000000010000000000000
+ 000110 | 00000010000000000000000000000000000000000000000000
+ 000111 | 00000100000000000000000000000000000000000000000000
+ 001000 | 00000000000000000000000000000000000000000000000001
+ 001001 | 00100000000000000000000000000000000000000000000000
+ 001010 | 01000000000000000000000000000000000000000000000000
+ 001011 | 10000000000000000000000000000000000000000000000000
+ 001100 | 00000000000000000000000000000000100000000000000000
+ 001101 | 00000000000000000000000000000000000000010000000000
+ 001110 | 00000000000000000000000000000000000000100000000000
+ 001111 | 00000000000000000000000000100000000000000000000000
+ 010000 | 00000000000000000000000001000000000000000000000000
+ 010001 | 00000000000000000000000010000000000000000000000000
+ 010010 | 00000000000000000000000000000000000100000000000000
+ 010011 | 00000000000000000000000100000000000000000000000000
+ 010100 | 00000000000000000000001000000000000000000000000000
+ 010101 | 00000000000000000000010000000000000000000000000000
+ 010110 | 00000000000000000000000000000000000000000000010000
+ 010111 | 00001000000000000000000000000000000000000000000000
+ 011000 | 00000000000000000000000000000000000000000001000000
+ 011001 | 00010000000000000000000000000000000000000000000000
+ 011010 | 00000000000000000000000000000000000000000000000010
+ 011011 | 00000000000000001000000000000000000000000000000000
+ 011100 | 00000000000000010000000000000000000000000000000000
+ 011101 | 00000000000000100000000000000000000000000000000000
+ 011110 | 00000000000000000000000000000000000000000100000000
+ 011111 | 00000000000000000010000000000000000000000000000000
+ 100000 | 00000000000000000100000000000000000000000000000000
+ 100001 | 00000000000000000000000000000000000000000010000000
+ 100010 | 00000000000000000001000000000000000000000000000000
+ 100011 | 00000000000000000000000000000001000000000000000000
+ 100100 | 00000000000000000000000000000000000000001000000000
+ 100101 | 00000000000000000000000000000000000000000000001000
+ 100110 | 00000000000001000000000000000000000000000000000000
+ 100111 | 00000000000010000000000000000000000000000000000000
+ 101000 | 00000000000100000000000000000000000000000000000000
+ 101001 | 00000000001000000000000000000000000000000000000000
+ 101010 | 00000000000000000000000000000000000000000000100000
+ 101011 | 00000000010000000000000000000000000000000000000000
+ 101100 | 00000000100000000000000000000000000000000000000000
+ 101101 | 00000001000000000000000000000000000000000000000000
+ 101110 | 00000000000000000000100000000000000000000000000000
+ 101111 | 00000000000000000000000000000000000001000000000000
+ 110000 | 00000000000000000000000000000000001000000000000000
+ 110001 | 00000000000000000000000000000010000000000000000000
+--------------------------------------------------------------
+Loading device for application Rf_Device from file 'v200.nph' in environment C:\ISE10.1i\ISE.
+
+Synthesizing (advanced) Unit <cpu>.
+INFO:Xst - HDL ADVISOR - The RAM <Mram_AXYS> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 8-bit                      |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_and0000>      | high     |
+    |     addrA          | connected to signal <regsel>        |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <regfile>       |          |
+    -----------------------------------------------------------------------
+Unit <cpu> synthesized (advanced).
+INFO:Xst:2261 - The FF/Latch <OUT_7> in Unit <ALU> is equivalent to the following FF/Latch, which will be removed : <N> 
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x8-bit single-port distributed RAM                   : 1
+# Adders/Subtractors                                   : 5
+ 16-bit adder                                          : 1
+ 4-bit adder                                           : 2
+ 4-bit adder carry in/out                              : 1
+ 5-bit adder carry in                                  : 1
+# Registers                                            : 156
+ Flip-Flops                                            : 156
+# Comparators                                          : 2
+ 3-bit comparator greatequal                           : 2
+# Multiplexers                                         : 2
+ 1-bit 8-to-1 multiplexer                              : 1
+ 8-bit 4-to-1 multiplexer                              : 1
+# Xors                                                 : 3
+ 1-bit xor2                                            : 1
+ 1-bit xor4                                            : 1
+ 8-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <cpu> ...
+
+Optimizing unit <ALU> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block cpu, actual ratio is 12.
+INFO:Xst:2261 - The FF/Latch <ALU/OUT_5> in Unit <cpu> is equivalent to the following FF/Latch, which will be removed : <ALU/Z_BRB3> 
+INFO:Xst:2261 - The FF/Latch <ALU/OUT_6> in Unit <cpu> is equivalent to the following FF/Latch, which will be removed : <ALU/Z_BRB2> 
+INFO:Xst:2261 - The FF/Latch <ALU/OUT_7> in Unit <cpu> is equivalent to the following 3 FFs/Latches, which will be removed : <ALU/V_BRB2> <ALU/Z_BRB1> <ALU/CO_BRB0> 
+INFO:Xst:2261 - The FF/Latch <ALU/OUT_4> in Unit <cpu> is equivalent to the following FF/Latch, which will be removed : <ALU/Z_BRB1> 
+INFO:Xst:2261 - The FF/Latch <ALU/OUT_5> in Unit <cpu> is equivalent to the following FF/Latch, which will be removed : <ALU/CO_BRB3> 
+INFO:Xst:2261 - The FF/Latch <ALU/OUT_6> in Unit <cpu> is equivalent to the following FF/Latch, which will be removed : <ALU/CO_BRB0> 
+INFO:Xst:2261 - The FF/Latch <ALU/OUT_0> in Unit <cpu> is equivalent to the following FF/Latch, which will be removed : <ALU/Z_BRB4> 
+INFO:Xst:2261 - The FF/Latch <ALU/OUT_1> in Unit <cpu> is equivalent to the following FF/Latch, which will be removed : <ALU/Z_BRB3> 
+INFO:Xst:2261 - The FF/Latch <ALU/OUT_2> in Unit <cpu> is equivalent to the following FF/Latch, which will be removed : <ALU/Z_BRB1> 
+INFO:Xst:2261 - The FF/Latch <ALU/OUT_3> in Unit <cpu> is equivalent to the following 2 FFs/Latches, which will be removed : <ALU/Z_BRB0> <ALU/HC_BRB0> 
+
+Pipelining and Register Balancing Report ...
+
+Processing Unit <cpu> :
+	Register(s) N141_FRB alu_op_3_or00021_FRB alu_op_3_or000211_FRB has(ve) been forward balanced into : AI<0>171_SW1_SW0_FRB.
+	Register(s) SF11111_FRB state_FSM_FFd37 state_FSM_FFd16 state_FSM_FFd7 has(ve) been forward balanced into : SF11141_FRB.
+	Register(s) alu_op_3_or00011_FRB state_FSM_FFd42 state_FSM_FFd43 BI_or0001_SW0_FRB has(ve) been forward balanced into : BI_or0001_FRB.
+	Register(s) alu_op_3_or00011_FRB state_FSM_FFd7 has(ve) been forward balanced into : alu_op_3_or000211_FRB.
+	Register(s) alu_op_3_or000211_FRB SF11111_FRB state_FSM_FFd41 state_FSM_FFd40 has(ve) been forward balanced into : alu_op_3_or00021_FRB.
+	Register(s) regsel_or000117_FRB regsel_or00014_FRB regsel_or000113_FRB has(ve) been forward balanced into : regsel_or000115_FRB.
+	Register(s) regsel_or000117_FRB state_FSM_FFd17 state_FSM_FFd3 state_FSM_FFd2 has(ve) been forward balanced into : alu_op_3_or00011_FRB.
+	Register(s) state_FSM_FFd16 state_FSM_FFd49 state_FSM_FFd45 state_FSM_FFd42 has(ve) been forward balanced into : AI<0>110_FRB.
+	Register(s) state_FSM_FFd2 state_FSM_FFd3 state_FSM_FFd17 AI_or0000_SW0_FRB has(ve) been forward balanced into : AI_or0000_FRB.
+	Register(s) state_FSM_FFd20 state_FSM_FFd43 state_FSM_FFd24 state_FSM_FFd50 has(ve) been forward balanced into : AI<0>127_FRB.
+	Register(s) state_FSM_FFd32 state_FSM_FFd41 state_FSM_FFd40 has(ve) been forward balanced into : N141_FRB.
+	Register(s) state_FSM_FFd34 state_FSM_FFd35 state_FSM_FFd39 state_FSM_FFd24 has(ve) been forward balanced into : regsel_or00001_FRB.
+	Register(s) state_FSM_FFd34 state_FSM_FFd39 state_FSM_FFd35 state_FSM_FFd41 has(ve) been forward balanced into : AI<0>122_FRB.
+	Register(s) state_FSM_FFd45 state_FSM_FFd47 state_FSM_FFd10 BI_or00011_SW0_FRB has(ve) been forward balanced into : BI_or00011_FRB.
+	Register(s) state_FSM_FFd7 backwards has(ve) been forward balanced into : alu_op_2_mux0000_SW0_FRB.
+	Register(s) ALU/CO has(ve) been backward balanced into : ALU/CO_BRB1 .
+	Register(s) ALU/HC has(ve) been backward balanced into : ALU/HC_BRB2 ALU/HC_BRB3.
+	Register(s) ALU/V has(ve) been backward balanced into : ALU/V_BRB0 ALU/V_BRB1 ALU/V_BRB3.
+Unit <cpu> processed.
+FlipFlop state_FSM_FFd33 has been replicated 1 time(s)
+FlipFlop state_FSM_FFd7 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 175
+ Flip-Flops                                            : 175
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : cpu.ngr
+Top Level Output File Name         : cpu
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 38
+
+Cell Usage :
+# BELS                             : 603
+#      BUF                         : 1
+#      GND                         : 1
+#      INV                         : 1
+#      LUT2                        : 37
+#      LUT2_D                      : 4
+#      LUT2_L                      : 1
+#      LUT3                        : 117
+#      LUT3_D                      : 5
+#      LUT3_L                      : 15
+#      LUT4                        : 278
+#      LUT4_D                      : 22
+#      LUT4_L                      : 28
+#      MUXCY                       : 23
+#      MUXF5                       : 43
+#      MUXF6                       : 1
+#      VCC                         : 1
+#      XORCY                       : 25
+# FlipFlops/Latches                : 175
+#      FD                          : 2
+#      FDCE                        : 59
+#      FDE                         : 97
+#      FDPE                        : 8
+#      FDR                         : 1
+#      FDRE                        : 2
+#      FDS                         : 5
+#      FDSE                        : 1
+# RAMS                             : 8
+#      RAM16X1S                    : 8
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 37
+#      IBUF                        : 12
+#      OBUF                        : 25
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2s200pq208-5 
+
+ Number of Slices:                      277  out of   2352    11%  
+ Number of Slice Flip Flops:            175  out of   4704     3%  
+ Number of 4 input LUTs:                516  out of   4704    10%  
+    Number used as logic:               508
+    Number used as RAMs:                  8
+ Number of IOs:                          38
+ Number of bonded IOBs:                  38  out of    140    27%  
+ Number of GCLKs:                         1  out of      4    25%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 183   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+reset                              | IBUF                   | 67    |
+_and0000(_and000029_f5:O)          | NONE(Mram_AXYS7)       | 8     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 23.648ns (Maximum Frequency: 42.287MHz)
+   Minimum input arrival time before clock: 21.920ns
+   Maximum output required time after clock: 21.274ns
+   Maximum combinational path delay: 16.273ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 23.648ns (frequency: 42.287MHz)
+  Total number of paths / destination ports: 36357 / 259
+-------------------------------------------------------------------------
+Delay:               23.648ns (Levels of Logic = 17)
+  Source:            RDY1 (FF)
+  Destination:       ALU/V_BRB3 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: RDY1 to ALU/V_BRB3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              15   1.292   2.700  RDY1 (RDY1)
+     LUT3:I0->O           10   0.653   2.200  DIMUX<0>1 (DIMUX<0>)
+     LUT4:I0->O            4   0.653   1.600  BI<0>1 (BI<0>)
+     LUT4:I1->O            2   0.653   1.340  AI<0>171_SW1 (N208)
+     LUT4:I3->O            1   0.653   1.150  ALU/logic<0>_SW0 (N175)
+     LUT4:I3->O            1   0.653   0.000  ALU/Mmux_temp_BI11_F (N263)
+     MUXF5:I0->O           1   0.375   1.150  ALU/Mmux_temp_BI11 (ALU/temp_BI<0>)
+     LUT2:I1->O            1   0.653   0.000  ALU/Madd_temp_l_addsub0000_lut<0> (ALU/Madd_temp_l_addsub0000_lut<0>)
+     MUXCY:S->O            1   0.784   0.000  ALU/Madd_temp_l_addsub0000_cy<0> (ALU/Madd_temp_l_addsub0000_cy<0>)
+     MUXCY:CI->O           1   0.050   0.000  ALU/Madd_temp_l_addsub0000_cy<1> (ALU/Madd_temp_l_addsub0000_cy<1>)
+     XORCY:CI->O           2   0.500   1.340  ALU/Madd_temp_l_addsub0000_xor<2> (ALU/temp_l<2>)
+     LUT2:I0->O            2   0.653   1.340  ALU/temp_HC_SW0 (N177)
+     LUT4:I2->O            1   0.653   1.150  ALU/temp_HC1 (ALU/temp_HC1)
+     MUXCY:CI->O           1   0.050   0.000  ALU/Madd_temp_h_cy<0> (ALU/Madd_temp_h_cy<0>)
+     MUXCY:CI->O           1   0.050   0.000  ALU/Madd_temp_h_cy<1> (ALU/Madd_temp_h_cy<1>)
+     MUXCY:CI->O           1   0.050   0.000  ALU/Madd_temp_h_cy<2> (ALU/Madd_temp_h_cy<2>)
+     MUXCY:CI->O           0   0.050   0.000  ALU/Madd_temp_h_cy<3> (ALU/Madd_temp_h_cy<3>)
+     XORCY:CI->O           1   0.500   0.000  ALU/Madd_temp_h_xor<4> (ALU/temp_h<4>)
+     FDE:D                     0.753          ALU/V_BRB3
+    ----------------------------------------
+    Total                     23.648ns (9.678ns logic, 13.970ns route)
+                                       (40.9% logic, 59.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 3259 / 311
+-------------------------------------------------------------------------
+Offset:              21.920ns (Levels of Logic = 18)
+  Source:            DI<0> (PAD)
+  Destination:       ALU/V_BRB3 (FF)
+  Destination Clock: clk rising
+
+  Data Path: DI<0> to ALU/V_BRB3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.924   1.340  DI_0_IBUF (DI_0_IBUF)
+     LUT3:I2->O           10   0.653   2.200  DIMUX<0>1 (DIMUX<0>)
+     LUT4:I0->O            4   0.653   1.600  BI<0>1 (BI<0>)
+     LUT4:I1->O            2   0.653   1.340  AI<0>171_SW1 (N208)
+     LUT4:I3->O            1   0.653   1.150  ALU/logic<0>_SW0 (N175)
+     LUT4:I3->O            1   0.653   0.000  ALU/Mmux_temp_BI11_F (N263)
+     MUXF5:I0->O           1   0.375   1.150  ALU/Mmux_temp_BI11 (ALU/temp_BI<0>)
+     LUT2:I1->O            1   0.653   0.000  ALU/Madd_temp_l_addsub0000_lut<0> (ALU/Madd_temp_l_addsub0000_lut<0>)
+     MUXCY:S->O            1   0.784   0.000  ALU/Madd_temp_l_addsub0000_cy<0> (ALU/Madd_temp_l_addsub0000_cy<0>)
+     MUXCY:CI->O           1   0.050   0.000  ALU/Madd_temp_l_addsub0000_cy<1> (ALU/Madd_temp_l_addsub0000_cy<1>)
+     XORCY:CI->O           2   0.500   1.340  ALU/Madd_temp_l_addsub0000_xor<2> (ALU/temp_l<2>)
+     LUT2:I0->O            2   0.653   1.340  ALU/temp_HC_SW0 (N177)
+     LUT4:I2->O            1   0.653   1.150  ALU/temp_HC1 (ALU/temp_HC1)
+     MUXCY:CI->O           1   0.050   0.000  ALU/Madd_temp_h_cy<0> (ALU/Madd_temp_h_cy<0>)
+     MUXCY:CI->O           1   0.050   0.000  ALU/Madd_temp_h_cy<1> (ALU/Madd_temp_h_cy<1>)
+     MUXCY:CI->O           1   0.050   0.000  ALU/Madd_temp_h_cy<2> (ALU/Madd_temp_h_cy<2>)
+     MUXCY:CI->O           0   0.050   0.000  ALU/Madd_temp_h_cy<3> (ALU/Madd_temp_h_cy<3>)
+     XORCY:CI->O           1   0.500   0.000  ALU/Madd_temp_h_xor<4> (ALU/temp_h<4>)
+     FDE:D                     0.753          ALU/V_BRB3
+    ----------------------------------------
+    Total                     21.920ns (9.310ns logic, 12.610ns route)
+                                       (42.5% logic, 57.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 1449 / 25
+-------------------------------------------------------------------------
+Offset:              21.274ns (Levels of Logic = 6)
+  Source:            state_FSM_FFd21 (FF)
+  Destination:       AB<0> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: state_FSM_FFd21 to AB<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            14   1.292   2.600  state_FSM_FFd21 (state_FSM_FFd21)
+     LUT3_D:I0->O          9   0.653   2.120  AB_or00061 (AB_or0006)
+     LUT4:I0->O            1   0.653   1.150  AB_or000711_SW0 (N273)
+     LUT4:I2->O           16   0.653   2.800  AB_or000711 (AB_or0007)
+     LUT4:I1->O            1   0.653   1.150  AB<0>25_SW0 (N307)
+     LUT4:I3->O            2   0.653   1.340  AB<0>25 (AB_0_OBUF)
+     OBUF:I->O                 5.557          AB_0_OBUF (AB<0>)
+    ----------------------------------------
+    Total                     21.274ns (10.114ns logic, 11.160ns route)
+                                       (47.5% logic, 52.5% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 17 / 17
+-------------------------------------------------------------------------
+Delay:               16.273ns (Levels of Logic = 6)
+  Source:            DI<0> (PAD)
+  Destination:       AB<8> (PAD)
+
+  Data Path: DI<0> to AB<8>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.924   1.340  DI_0_IBUF (DI_0_IBUF)
+     LUT3:I2->O           10   0.653   2.200  DIMUX<0>1 (DIMUX<0>)
+     LUT3:I1->O            1   0.653   1.150  AB<8>16_SW0 (N341)
+     LUT4:I3->O            1   0.653   1.150  AB<8>16 (AB<8>16)
+     LUT3:I2->O            2   0.653   1.340  AB<8>27 (AB_8_OBUF)
+     OBUF:I->O                 5.557          AB_8_OBUF (AB<8>)
+    ----------------------------------------
+    Total                     16.273ns (9.093ns logic, 7.180ns route)
+                                       (55.9% logic, 44.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 12.55 secs
+ 
+--> 
+
+Total memory usage is 155812 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :   12 (   0 filtered)
+
